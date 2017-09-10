@@ -1,0 +1,19 @@
+cd /tmp
+mkdir -p sample1
+cd sample1
+rm -rf *
+wget http://www-eu.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+tar -xzvf apache-maven-3.5.0-bin.tar.gz
+
+
+export M2_HOME=/tmp/sample
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+export PATH=$M2:$PATH
+
+cp -r /app/.jenkins/workspace/TechGig-Contest-ProdEnv/ .
+
+
+#rm -rf /app/.m2/repository/*
+
+apache-maven-3.5.0/bin/mvn -f ./TechGig-Contest-ProdEnv/NumberGenerator/pom.xml clean install -X
