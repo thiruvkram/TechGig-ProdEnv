@@ -1,4 +1,4 @@
-## Jenkins Job Name --> TechGig-Contest-DEV_PROD_INST
+## Jenkins Job Name --> TechGig-Contest-PROD_ENV_INST
 cd /tmp
 mkdir -p sample1
 cd sample1
@@ -12,9 +12,9 @@ export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 export PATH=$M2:$PATH
 
-cp -r /app/.jenkins/workspace/TechGig-Contest-DEV_PROD_INST/ .
+cp -r /app/.jenkins/workspace/TechGig-Contest-PROD_ENV_INST/ .
 
 
 #rm -rf /app/.m2/repository/*
 
-apache-maven-3.5.0/bin/mvn -f ./TechGig-Contest-DEV_PROD_INST/NumberGenerator/pom.xml clean install -X
+apache-maven-3.5.0/bin/mvn -f ./TechGig-Contest-PROD_ENV_INST/NumberGenerator/pom.xml clean install -X
